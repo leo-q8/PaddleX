@@ -274,3 +274,21 @@ class TSPPPredictor(BasePaddlePredictor):
         n = len(ts[0])
         x = [np.stack([lst[i] for lst in ts], axis=0) for i in range(n)]
         return x
+
+
+class ImageKeypointPredictor(BasePaddlePredictor):
+
+    INPUT_KEYS = "img"
+    DEAULT_INPUTS = {"img": "img"}
+
+    OUTPUT_KEYS = ["heatmap", "masks"]
+    DEAULT_OUTPUTS = None
+
+    def to_batch(self, img):
+        return [np.stack(img, axis=0).astype(dtype=np.float32, copy=False)]
+    
+    def format_output(self, pred):
+        return [{
+            "heatmap": res[0],
+            "masks": res[1],
+        } for res in zip(*pred)]

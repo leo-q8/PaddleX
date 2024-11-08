@@ -1,0 +1,10 @@
+Global:
+  pipeline_name: human_keypoint_detection
+  input: https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/keypoint_detection_001.jpg 
+  
+Pipeline:
+  human_det_model: PP-YOLOE-S_human
+  keypoint_det_model: PP-TinyPose_128x96
+  human_det_batch_size: 1
+  keypoint_det_batch_size: 1
+  device: gpu

@@ -57,6 +57,8 @@ class DetTrainer(BaseTrainer):
             epochs_iters = self.train_config.epochs_iters
         else:
             epochs_iters = self.pdx_config.get_epochs_iters()
+        if self.train_config.warmup_steps is not None:
+            self.pdx_config.update_warmup_steps(self.train_config.warmup_steps)
         if self.global_config.output is not None:
             self.pdx_config.update_save_dir(self.global_config.output)
 

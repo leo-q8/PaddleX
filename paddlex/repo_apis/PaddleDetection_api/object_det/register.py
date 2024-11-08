@@ -932,3 +932,35 @@ register_model_info(
         },
     }
 )
+
+
+register_model_info(
+    {
+        "model_name": "PP-TinyPose_128x96",
+        "suite": "Det",
+        "config_path": osp.join(PDX_CONFIG_DIR, "PP-TinyPose_128x96.yaml"),
+        "supported_apis": ["train", "evaluate", "predict", "export", "infer"],
+        "supported_dataset_types": ["KeypointTopDownCocoDetDataset"],
+        "supported_train_opts": {
+            "device": ["cpu", "gpu_nxcx", "xpu", "npu", "mlu"],
+            "dy2st": False,
+            "amp": ["OFF"],
+        },
+    }
+)
+
+
+register_model_info(
+    {
+        "model_name": "PP-TinyPose_256x192",
+        "suite": "Det",
+        "config_path": osp.join(PDX_CONFIG_DIR, "PP-TinyPose_256x192.yaml"),
+        "supported_apis": ["train", "evaluate", "predict", "export", "infer"],
+        "supported_dataset_types": ["KeypointTopDownCocoDetDataset"],
+        "supported_train_opts": {
+            "device": ["cpu", "gpu_nxcx", "xpu", "npu", "mlu"],
+            "dy2st": False,
+            "amp": ["OFF"],
+        },
+    }
+)

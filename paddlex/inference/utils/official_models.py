@@ -266,6 +266,8 @@ PP-LCNet_x1_0_vehicle_attribute_infer.tar",
     "PP-YOLOE_plus-S_face": "https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b1_v2/PP-YOLOE_plus-S_face_infer.tar",
     "MobileFaceNet": "https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b1_v2/MobileFaceNet_infer.tar",
     "ResNet50_face": "https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b1_v2/ResNet50_face_infer.tar",
+    "PP-TinyPose_128x96": "https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b1_v2/PP-TinyPose_128x96_infer.tar",
+    "PP-TinyPose_256x192": "https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0b1_v2/PP-TinyPose_256x192_infer.tar",
 }
 
 

@@ -12,10 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .predictor import (
-    BasePaddlePredictor,
-    ImagePredictor,
-    ImageDetPredictor,
-    TSPPPredictor,
-    ImageKeypointPredictor,
-)
+
+from ..object_detection import DetEvaluator
+from .model_list import MODELS
+
+
+class KeypointEvaluator(DetEvaluator):
+    """Object Detection Model Evaluator"""
+
+    entities = MODELS
+
+    def update_config(self):
+        """update evalution config"""
+        if self.eval_config.log_interval:
+            self.pdx_config.update_log_interval(self.eval_config.log_interval)
+        self.pdx_config.update_dataset(self.global_config.dataset_dir, "KeypointTopDownCocoDataset")
+        self.pdx_config.update_weights(self.eval_config.weight_path)

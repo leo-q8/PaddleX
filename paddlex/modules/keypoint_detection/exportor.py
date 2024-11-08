@@ -12,10 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .predictor import (
-    BasePaddlePredictor,
-    ImagePredictor,
-    ImageDetPredictor,
-    TSPPPredictor,
-    ImageKeypointPredictor,
-)
+from ..base import BaseExportor
+from .model_list import MODELS
+
+
+class KeypointExportor(BaseExportor):
+    """Object Detection Model Exportor"""
+
+    entities = MODELS

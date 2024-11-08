@@ -12,10 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .predictor import (
-    BasePaddlePredictor,
-    ImagePredictor,
-    ImageDetPredictor,
-    TSPPPredictor,
-    ImageKeypointPredictor,
-)
+
+from .model_list import MODELS
+from ..object_detection import DetTrainer
+
+
+class KeypointTrainer(DetTrainer):
+    """Human Pose Estimation Model Trainer"""
+
+    entities = MODELS
+
+    def _update_dataset(self):
+        """update dataset settings"""
+        self.pdx_config.update_dataset(self.global_config.dataset_dir, "KeypointTopDownCocoDataset")
